@@ -19,13 +19,21 @@
 #
 ---
 include:
+  # Build firmware chính cho Corne left
   - board: nice_nano_v2
     shield: corne_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: corne_left_studio
+  
+  # Build firmware chính cho Corne right
   - board: nice_nano_v2
     shield: corne_right  
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: corne_right_studio
+  
+  # Build firmware RESET - xóa toàn bộ ghép nối BLE trên nice_nano_v2
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: nice_nano_v2_reset
